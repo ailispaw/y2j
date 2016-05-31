@@ -1,14 +1,11 @@
-FROM python
+FROM alpine
 MAINTAINER jon@wildducktheories.com
+ENV META_IMAGE=wildducktheories/y2j:alpine
 
-RUN pip install pyyaml
-RUN cd /usr/local/bin && curl -O http://stedolan.github.io/jq/download/linux64/jq && chmod ugo+x jq
+RUN apk add --no-cache py-yaml jq
 
 ADD y2j.sh /usr/local/bin/
 
-RUN ln -sf y2j.sh /usr/local/bin/y2j
-RUN ln -sf y2j.sh /usr/local/bin/j2y
-RUN ln -sf y2j.sh /usr/local/bin/yq
-
-ENV META_IMAGE=wildducktheories/y2j
-
+RUN ln -sf y2j.sh /usr/local/bin/y2j && \
+    ln -sf y2j.sh /usr/local/bin/j2y && \
+    ln -sf y2j.sh /usr/local/bin/yq

@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 set -o pipefail
 
 VERSION=1.1.1
-DEFAULT_META_IMAGE=wildducktheories/y2j
+DEFAULT_META_IMAGE=wildducktheories/y2j:alpine
 META_IMAGE=${META_IMAGE:-${DEFAULT_META_IMAGE}}
 
 die() {
@@ -32,7 +32,7 @@ EOF
 
 installer() {
 	local target=${1:-/usr/local/bin}
-
+	: ${BASH_SOURCE:="$(which $0)"}
 	cat <<EOF
 #!/bin/bash
 base64() {
