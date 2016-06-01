@@ -1,6 +1,4 @@
 FROM alpine
-MAINTAINER jon@wildducktheories.com
-ENV META_IMAGE=wildducktheories/y2j:alpine
 
 RUN apk add --no-cache py-yaml jq
 

@@ -3,7 +3,7 @@
 set -o pipefail
 
 VERSION=1.1.1
-DEFAULT_META_IMAGE=wildducktheories/y2j:alpine
+DEFAULT_META_IMAGE=ailispaw/y2j
 META_IMAGE=${META_IMAGE:-${DEFAULT_META_IMAGE}}
 
 die() {
