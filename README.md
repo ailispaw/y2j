@@ -30,18 +30,16 @@ YAML to YAML transformations are performed by applying a jq filter to a JSON tra
 of the YAML input stream with y2j and transforming the resulting JSON stream back to YAML with j2y.
 
 The script will use the local instances of jq, python and the required python modules if they exist locally
-or will use a docker container based on the wildducktheories/y2j image otherwise.
+or will use a docker container based on the wildducktheories/y2j:alpine image otherwise.
 
 #INSTALLATION
 
 ```
-docker run --rm wildducktheories/y2j y2j.sh installer /usr/local/bin | sudo bash
+docker run --rm wildducktheories/y2j:alpine y2j.sh installer /usr/local/bin | sudo bash
 ```
 
 Replace /usr/local/bin with a different directory to specify a different installation location or omit to
 default to /usr/local/bin.
-
-If the installer fails with complaints about lack of a running docker daemon or failure to find a wildducktheories/y2j image, consider changing ```sudo bash``` to ```sudo -E bash``` so that root inherits the current user's docker environment.
 
 #EXAMPLES
 ##j2y
