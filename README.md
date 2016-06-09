@@ -70,13 +70,11 @@ yields:
 
 ##y2j
 <pre>
-(
-	y2j &lt;&lt;EOF
+y2j -c . &lt;&lt;EOF
 foo:
 - id: 1
 - id: 2
 EOF
-) | jq -c .
 </pre>
 
 yields:
